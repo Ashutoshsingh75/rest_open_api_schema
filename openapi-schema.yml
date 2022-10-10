@@ -1,0 +1,136 @@
+openapi: 3.0.2
+info:
+  title: ''
+  version: ''
+paths:
+  /persons:
+    get:
+      operationId: listPersonApis
+      description: ':Get list of persons
+
+        :method: `GET`
+
+        :HTTPRequest:
+
+        :Response: `List of Json Array`'
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items: {}
+          description: ''
+      tags:
+      - persons
+    post:
+      operationId: createPersonApi
+      description: ":Process: Post a Person \n:summary: \"Create New User\"\n:method:\
+        \ `POST`\n:HTTPRequest:\n\n** Context **\n\n:firstName:          `string`\n\
+        :lastName:           `string`\n:email:              `string`\n:Response: `Posted\
+        \ Data in Json`"
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema: {}
+          application/x-www-form-urlencoded:
+            schema: {}
+          multipart/form-data:
+            schema: {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema: {}
+          description: ''
+      tags:
+      - persons
+  /persons/{id}:
+    get:
+      operationId: retrievePersonDetail
+      description: ":Process: Person details\n:method: `GET`\n:HTTPRequest:\n    \
+        \   \n\n** Context **\n:param: `id`\n\n:Response: `Retrieve List of Json Array\
+        \ Data by ID, And Status Code According method`"
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: ''
+      tags:
+      - persons
+    put:
+      operationId: updatePersonDetail
+      description: ':Process: Person details
+
+        :method: `PUT`
+
+        :HTTPRequest:
+
+
+        ** Context **
+
+        :param: `id`
+
+
+        :Response: `Retrieve List of Json Array Data by ID, And Status Code According
+        method`'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema: {}
+          application/x-www-form-urlencoded:
+            schema: {}
+          multipart/form-data:
+            schema: {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema: {}
+          description: ''
+      tags:
+      - persons
+    delete:
+      operationId: destroyPersonDetail
+      description: ':Process: Person details
+
+
+        :method: `DELETE`
+
+        :HTTPRequest:
+
+
+        ** Context **
+
+        :param: `id`
+
+        :"description": "Remove person specified by id"'
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: ''
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - persons
